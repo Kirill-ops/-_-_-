@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Text;
 
 namespace BlockCiphers
 {
+
+    
+
     internal class Program
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("В данном проекте я хочу реализовать Блочный шифр.");
             Console.WriteLine("Если вам интересно в чём его суть, то просто погуглите");
             Console.WriteLine("Ну-с, начнём!\n");
@@ -15,7 +19,7 @@ namespace BlockCiphers
             Console.WriteLine("Блочные шифры.");
             Console.WriteLine("Неправильно шифрует и расшифровывает пробелы\n");
 
-            var str = "The_text_to_be_encrypted";
+            var str = "The text to be encrypted - Текст, который нужно зашифровать.";
 
             Console.WriteLine($"Изначальная строка: {str}");
 
@@ -23,9 +27,7 @@ namespace BlockCiphers
             var res = blockCipher.Encoder(str);
             Console.WriteLine($"Зашифрованная строка: {res}");
             Console.WriteLine($"Расшифрованная строка: {blockCipher.Decoder(res)}");
-
-
-
+            
         }
 
     }

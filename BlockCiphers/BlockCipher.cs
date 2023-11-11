@@ -24,25 +24,29 @@ namespace BlockCiphers
 
         public string Encoder(string str)
         {
-            var bytes = Encoding.UTF8.GetBytes(str);
+            //var bytes = Encoding.UTF8.GetBytes(str);
+            var bytes = Encoding.Unicode.GetBytes(str);
 
             var listBit = PBlock.Encoder(bytes);    // блок P
             var SBytes = SBlock.Encoder(listBit);   // блок S
             listBit = PBlock.Encoder(SBytes);       // блок P
 
-            return Encoding.UTF8.GetString(ConvertListStringBitsToByteArray(listBit));
-            
+            //return Encoding.UTF8.GetString(ConvertListStringBitsToByteArray(listBit));
+            return Encoding.Unicode.GetString(ConvertListStringBitsToByteArray(listBit));
+
         }
 
         public string Decoder(string str)
         {
-            var bytes = Encoding.UTF8.GetBytes(str);
+            //var bytes = Encoding.UTF8.GetBytes(str);
+            var bytes = Encoding.Unicode.GetBytes(str);
 
             var listBit = PBlock.Decoder(bytes);    // блок P
             var SBytes = SBlock.Decoder(listBit);   // блок S
             listBit = PBlock.Decoder(SBytes);       // блок P
 
-            return Encoding.UTF8.GetString(ConvertListStringBitsToByteArray(listBit));
+            //return Encoding.UTF8.GetString(ConvertListStringBitsToByteArray(listBit));
+            return Encoding.Unicode.GetString(ConvertListStringBitsToByteArray(listBit));
         }
 
 
