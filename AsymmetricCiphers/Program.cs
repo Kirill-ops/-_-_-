@@ -64,6 +64,7 @@ namespace AsymmetricCiphers
 
         }
 
+        // возведение в степень больших целых чисел
         public static BigInteger Power(int num, int power)
         {
             var result = BigInteger.One;
@@ -97,6 +98,7 @@ namespace AsymmetricCiphers
             return (int)(Power(c, d) % n);
         }
 
+        // Преобразование списка целых чисел в строку
         public static string ConvertListIntToString(List<int> list)
         {
             string result = "";
