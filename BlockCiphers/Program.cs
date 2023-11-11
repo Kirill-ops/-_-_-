@@ -8,7 +8,7 @@ namespace BlockCiphers
         static void Main(string[] args)
         {
 
-            Console.WriteLine("В данном проекте я хочу реализовать Аффинный шифр.");
+            Console.WriteLine("В данном проекте я хочу реализовать Блочный шифр.");
             Console.WriteLine("Если вам интересно в чём его суть, то просто погуглите");
             Console.WriteLine("Ну-с, начнём!\n");
             Console.WriteLine("Вариант №8");

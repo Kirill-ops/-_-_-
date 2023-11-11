@@ -9,7 +9,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vigern_Cipher", "Vigern_Chi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Affine_Cipher", "Affine_Cipher\Affine_Cipher.vcxproj", "{20A054D1-BA8B-43E1-89E0-5066CD9105CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockCiphers", "BlockCiphers\BlockCiphers.csproj", "{131070DE-8165-41FA-B362-46F2706C66F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlockCiphers", "BlockCiphers\BlockCiphers.csproj", "{131070DE-8165-41FA-B362-46F2706C66F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsymmetricCiphers", "AsymmetricCiphers\AsymmetricCiphers.csproj", "{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,18 @@ Global
 		{131070DE-8165-41FA-B362-46F2706C66F1}.Release|x64.Build.0 = Release|Any CPU
 		{131070DE-8165-41FA-B362-46F2706C66F1}.Release|x86.ActiveCfg = Release|Any CPU
 		{131070DE-8165-41FA-B362-46F2706C66F1}.Release|x86.Build.0 = Release|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Debug|x64.Build.0 = Debug|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Debug|x86.Build.0 = Debug|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Release|x64.ActiveCfg = Release|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Release|x64.Build.0 = Release|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Release|x86.ActiveCfg = Release|Any CPU
+		{1BA8C58F-1ADC-4E35-B870-33DCF1946B62}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
