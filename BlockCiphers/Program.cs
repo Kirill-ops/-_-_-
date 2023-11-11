@@ -13,15 +13,20 @@ namespace BlockCiphers
             Console.WriteLine("Ну-с, начнём!\n");
             Console.WriteLine("Вариант №8");
             Console.WriteLine("Блочные шифры.");
+            Console.WriteLine("Неправильно шифрует и расшифровывает пробелы\n");
 
-            string str = "Albukerke_Sanya_LOH";
-            Console.WriteLine($"Изначальная строка: {str}"); 
+            string str = "The_text_to_be_encrypted";
+            //string str = "Текст,_который_надо_зашифровать";
+
+            Console.WriteLine($"Изначальная строка: {str}");
 
             var blockCipher = new BlockCipher();
             var res = blockCipher.Encoder(str);
             Console.WriteLine($"Зашифрованная строка: {res}");
             Console.WriteLine($"Расшифрованная строка: {blockCipher.Decoder(res)}");
-            
+
+
+
         }
 
     }

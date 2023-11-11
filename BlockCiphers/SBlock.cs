@@ -25,7 +25,7 @@ namespace BlockCiphers
                 str1 = '0' + str1;
             while (str2.Length != 4)
                 str2 = '0' + str2;
-
+            var s = str1 + str2;
             return str1 + str2;
         }
 

@@ -10,26 +10,10 @@ namespace BlockCiphers
 {
     public class BlockCipher
     {
-        //public Dictionary<int, bool> DictionaryPBox;
-        public List<int> EncoderDictionaryPBox;
-        public List<int> DecoderDictionaryPBox;
 
-        public List<byte> EncoderDictionarySBox;
-        public List<byte> DecoderDictionarySBox;
+        public BlockCipher() { }
 
-        public BlockCipher()
-        {
-            EncoderDictionaryPBox = new() { 5, 6, 7, 2, 0, 1, 3, 4 };
-
-            EncoderDictionarySBox = new() {
-                15, 12, 13, 14,
-                8,  10, 11, 9,
-                5,   4,  6, 7,
-                0,   2,  3, 1
-            };
-        }
-
-        private byte[] ConvertListStringToByteArray(List<string> bits)
+        private byte[] ConvertListStringBitsToByteArray(List<string> bits)
         {
             var result = new byte[bits.Count];
             for(int i = 0; i < bits.Count; i++)
@@ -40,34 +24,25 @@ namespace BlockCiphers
 
         public string Encoder(string str)
         {
-            var result = str;
+            var bytes = Encoding.UTF8.GetBytes(str);
 
-            // блок P
-            var bytes = Encoding.UTF8.GetBytes(result);
-            var listBit = PBlock.Encoder(bytes);
-            var SBytes = SBlock.Encoder(listBit);
-            listBit = PBlock.Encoder(SBytes);
+            var listBit = PBlock.Encoder(bytes);    // блок P
+            var SBytes = SBlock.Encoder(listBit);   // блок S
+            listBit = PBlock.Encoder(SBytes);       // блок P
 
-
-            result = Encoding.UTF8.GetString(ConvertListStringToByteArray(listBit));
-
-            return result;
+            return Encoding.UTF8.GetString(ConvertListStringBitsToByteArray(listBit));
+            
         }
 
         public string Decoder(string str)
         {
-            var result = str;
+            var bytes = Encoding.UTF8.GetBytes(str);
 
-            // блок P
-            var bytes = Encoding.UTF8.GetBytes(result);
-            var listBit = PBlock.Decoder(bytes);
-            var SBytes = SBlock.Decoder(listBit);
-            listBit = PBlock.Decoder(SBytes);
+            var listBit = PBlock.Decoder(bytes);    // блок P
+            var SBytes = SBlock.Decoder(listBit);   // блок S
+            listBit = PBlock.Decoder(SBytes);       // блок P
 
-
-            result = Encoding.UTF8.GetString(ConvertListStringToByteArray(listBit));
-
-            return result;
+            return Encoding.UTF8.GetString(ConvertListStringBitsToByteArray(listBit));
         }
 
 
