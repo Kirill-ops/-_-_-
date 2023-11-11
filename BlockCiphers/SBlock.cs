@@ -30,6 +30,7 @@ namespace BlockCiphers
         }
 
 
+        // шифратор
         public static byte[]  Encoder(List<string> listBit)
         {
             // to do
@@ -55,6 +56,7 @@ namespace BlockCiphers
             return bytesResult;
         }
 
+        // дешифратор
         public static byte[] Decoder(List<string> listBit)
         {
             // to do

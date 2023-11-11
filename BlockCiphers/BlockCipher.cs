@@ -29,51 +29,7 @@ namespace BlockCiphers
             };
         }
 
-        private string ToBinary(byte _byte)
-        {
-            var str = Convert.ToString(_byte, 2);
-
-            while (str.Length != 8)
-                str = '0' + str;
-
-            return str;
-        }
-
-        private string ToBinary(byte byteOne, byte byteTwo)
-        {
-            var str1 = Convert.ToString(byteOne, 2);
-            var str2 = Convert.ToString(byteTwo, 2);
-
-            while (str1.Length != 4)
-                str1 = '0' + str1;
-            while (str2.Length != 4)
-                str2 ='0' + str2;
-
-            return str1+str2;
-        }
-
-        private string BlockP(string bits)
-        {
-            string result = "";
-
-            for (int i = 0; i < bits.Length; i++)
-                result += bits[EncoderDictionaryPBox[i]];
-
-            return result;
-        }
-
-        private string BlockPDecoder(string bits)
-        {
-            var result = new char[8];
-            
-
-            for (int i = 0; i < bits.Length; i++)
-                result[EncoderDictionaryPBox[i]] += bits[i];
-
-            return new string(result);
-        }
-
-        private byte[] ConvertByteArray(List<string> bits)
+        private byte[] ConvertListStringToByteArray(List<string> bits)
         {
             var result = new byte[bits.Count];
             for(int i = 0; i < bits.Count; i++)
@@ -93,7 +49,7 @@ namespace BlockCiphers
             listBit = PBlock.Encoder(SBytes);
 
 
-            result = Encoding.UTF8.GetString(ConvertByteArray(listBit));
+            result = Encoding.UTF8.GetString(ConvertListStringToByteArray(listBit));
 
             return result;
         }
@@ -109,7 +65,7 @@ namespace BlockCiphers
             listBit = PBlock.Decoder(SBytes);
 
 
-            result = Encoding.UTF8.GetString(ConvertByteArray(listBit));
+            result = Encoding.UTF8.GetString(ConvertListStringToByteArray(listBit));
 
             return result;
         }

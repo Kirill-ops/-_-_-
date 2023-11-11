@@ -14,27 +14,14 @@ namespace BlockCiphers
             Console.WriteLine("Вариант №8");
             Console.WriteLine("Блочные шифры.");
 
-
             string str = "Albukerke_Sanya_LOH";
-            Console.WriteLine(str); 
+            Console.WriteLine($"Изначальная строка: {str}"); 
+
             var blockCipher = new BlockCipher();
             var res = blockCipher.Encoder(str);
-            Console.WriteLine(res);
-            Console.WriteLine(blockCipher.Decoder(res));
+            Console.WriteLine($"Зашифрованная строка: {res}");
+            Console.WriteLine($"Расшифрованная строка: {blockCipher.Decoder(res)}");
             
-
-
-
-
-
-            /*string btn = "1001";
-            int _int = Convert.ToInt32(btn, 2);
-            Console.WriteLine(_int);
-            str = Convert.ToString(125, 2);
-
-            Console.WriteLine(str);*/
-
-
         }
 
     }
