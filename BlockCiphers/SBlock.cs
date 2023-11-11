@@ -19,13 +19,13 @@ namespace BlockCiphers
         private static string ToBinary(byte byteOne, byte byteTwo)
         {
             var str1 = Convert.ToString(byteOne, 2);
-            var str2 = Convert.ToString(byteTwo, 2);
-
             while (str1.Length != 4)
                 str1 = '0' + str1;
+
+            var str2 = Convert.ToString(byteTwo, 2);
             while (str2.Length != 4)
                 str2 = '0' + str2;
-            var s = str1 + str2;
+
             return str1 + str2;
         }
 
