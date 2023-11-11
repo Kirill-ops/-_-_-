@@ -15,7 +15,7 @@ namespace BlockCiphers
             Console.WriteLine("Блочные шифры.");
             Console.WriteLine("Неправильно шифрует и расшифровывает пробелы\n");
 
-            string str = "The_text_to_be_encrypted";
+            var str = "The_text_to_be_encrypted";
             //string str = "Текст,_который_надо_зашифровать";
 
             Console.WriteLine($"Изначальная строка: {str}");

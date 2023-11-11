@@ -53,13 +53,13 @@ namespace BlockCiphers
             var bytesResult = new byte[listResultBit.Count];
             for (int i = 0; i < bytesResult.Length; i++)
                 bytesResult[i] = Convert.ToByte(listResultBit[i], 2);
+
             return bytesResult;
         }
 
         // дешифратор
         public static byte[] Decoder(List<string> listBit)
         {
-            // to do
             var numbers = new List<byte>();
             for (int i = 0; i < listBit.Count; i++)
             {
@@ -68,6 +68,7 @@ namespace BlockCiphers
                 _string = listBit[i].Substring(4, 4);            // выделяем 4 бита
                 numbers.Add((byte)EncoderDictionarySBox.IndexOf(Convert.ToByte(_string, 2))); // переводим в 10 СС, и сразу меняем
             }
+
             var listResultBit = new List<string>();
             for (int i = 0; i < numbers.Count; i += 2)
                 listResultBit.Add(ToBinary(numbers[i], numbers[i + 1]));
@@ -75,6 +76,7 @@ namespace BlockCiphers
             var bytesResult = new byte[listResultBit.Count];
             for (int i = 0; i < bytesResult.Length; i++)
                 bytesResult[i] = Convert.ToByte(listResultBit[i], 2);
+
             return bytesResult;
         }
 
