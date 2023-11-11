@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "StreamCiphers": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}

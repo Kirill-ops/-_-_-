@@ -126,7 +126,6 @@ namespace StreamCiphers
         static void Main(string[] args)
         {
             //Console.OutputEncoding = Encoding.Unicode;
-            //Console.InputEncoding = Encoding.Unicode;
 
             Console.WriteLine("В данном проекте я хочу реализовать Потоковый шифр.");
             Console.WriteLine("Если вам интересно в чём его суть, то просто погуглите");
@@ -148,7 +147,7 @@ namespace StreamCiphers
             PrintLongList(gen, "Инициализированный генератор случайных чисел");
 
             // сообщение
-            var message = "The_text_to_be_encrypted";
+            var message = "The text to be encrypted";
             //var message = "Hello, world!";
             Console.WriteLine("Сообщение: " + message);
 
