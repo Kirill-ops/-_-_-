@@ -165,8 +165,7 @@ namespace TheHammingCode
                 int power = 0;
                 for (int j = 0; j < list[i].Length; j++)
                 {
-                    var a = Math.Pow(2, power) - 1;
-                    if (j != a)
+                    if (j != Math.Pow(2, power) - 1)
                     {
 
                         str += list[i][j];
