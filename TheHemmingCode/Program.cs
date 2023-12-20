@@ -1,8 +1,6 @@
-﻿using System;
-using System.Net.WebSockets;
-using System.Text;
+﻿using System.Text;
 
-namespace TheHammingCode 
+namespace TheHammingCode
 {
     internal class Program
     {
@@ -40,8 +38,6 @@ namespace TheHammingCode
 
         public static string GetCodeHamming(string str)
         {
-            
-
             int i = 0;
             while (Math.Pow(2, i) < str.Length) 
             {
@@ -49,21 +45,15 @@ namespace TheHammingCode
                 i++;
             }
 
-            
             var s = str;
             for (int j = 0; j < i; j++)
-            {
                 str = str.Remove((int)Math.Pow(2, j) - 1, 1).Insert((int)Math.Pow(2, j) - 1, GetControlBit(s, (int)Math.Pow(2, j)).ToString());
-            }
-
 
             return str;
         }
 
         public static string GetCodeHammingX(string str)
         {
-
-
             int i = 0;
             while (Math.Pow(2, i) < str.Length)
             {
@@ -89,7 +79,6 @@ namespace TheHammingCode
                 str = str.Remove((int)Math.Pow(2, j) - 1, 1).Insert((int)Math.Pow(2, j) - 1, GetControlBit(s, (int)Math.Pow(2, j)).ToString());
             }
 
-
             return str;
         }
 
@@ -99,21 +88,11 @@ namespace TheHammingCode
 
             var bits = new List<string>();
             for (int i = 0; i < bytes.Length; i++)
-            {
                 bits.Add(ToBinary(bytes[i]));
-            }
-
-            
-            
-
 
             var list = new List<string>();
             for (int i = 0; i < bits.Count; i ++)
-            {
                 list.Add(GetCodeHamming(bits[i]));
-            
-            }
-            
 
             return list;
 
@@ -129,10 +108,9 @@ namespace TheHammingCode
                 list.Add(RecalculateCodeHamming(encoderList[i]));
                 int sum = -1;
                 for (int j = 0; j < encoderList[i].Length; j++)
-                {
                     if (list[i][j] != encoderList[i][j])
                         sum = sum == -1 ? j : sum + j;
-                }
+
                 if (sum != -1)
                 {
                     if (encoderList[i][sum] == '0')
