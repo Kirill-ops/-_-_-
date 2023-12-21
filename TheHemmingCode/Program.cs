@@ -69,15 +69,20 @@ namespace TheHammingCode
             int i = 0;
             while (Math.Pow(2, i) < str.Length)
             {
-                str = str.Remove((int)Math.Pow(2, i) - 1, 1).Insert((int)Math.Pow(2, i) - 1, "0");
+                var a = (int)Math.Pow(2, i) - 1;
+                str = str.Remove(a, 1).Insert(a, "0");
                 i++;
             }
+
+            //Console.WriteLine(str);
 
             var s = str;
             for (int j = 0; j < i; j++)
             {
                 str = str.Remove((int)Math.Pow(2, j) - 1, 1).Insert((int)Math.Pow(2, j) - 1, GetControlBit(s, (int)Math.Pow(2, j)).ToString());
             }
+
+            //Console.WriteLine(str);
 
             return str;
         }
@@ -106,11 +111,22 @@ namespace TheHammingCode
             for (int i = 0; i < encoderList.Count; i++)
             {
                 list.Add(RecalculateCodeHamming(encoderList[i]));
+            }
+
+            /*foreach (var encoder in list)
+                Console.Write($"{encoder} ");
+            Console.WriteLine();*/
+
+            for (int i = 0; i < list.Count; i++)
+            {
                 int sum = -1;
                 for (int j = 0; j < encoderList[i].Length; j++)
+                {
                     if (list[i][j] != encoderList[i][j])
-                        sum = sum == -1 ? j : sum + j;
+                        sum = sum == -1 ? j : sum + j + 1;
+                }
 
+                Console.WriteLine(list[i]);
                 if (sum != -1)
                 {
                     if (encoderList[i][sum] == '0')
@@ -118,8 +134,15 @@ namespace TheHammingCode
                     else
                         encoderList[i] = encoderList[i].Remove(sum, 1).Insert(sum, "0");
                 }
-                
+                Console.WriteLine(encoderList[i]);
+                Console.WriteLine();
+
+
             }
+
+            /*foreach (var encoder in encoderList)
+                Console.Write($"{encoder} ");
+            Console.WriteLine();*/
 
             return encoderList;
         }
@@ -143,7 +166,8 @@ namespace TheHammingCode
                 int power = 0;
                 for (int j = 0; j < list[i].Length; j++)
                 {
-                    if (j != Math.Pow(2, power) - 1)
+                    var a = (int)Math.Pow(2, power) - 1;
+                    if (j != a)
                     {
 
                         str += list[i][j];
@@ -181,15 +205,15 @@ namespace TheHammingCode
                 Console.Write($"{encoder} ");
             Console.WriteLine();
 
-            encoderList[0] = encoderList[0].Remove(2, 1).Insert(1, "0");
-            encoderList[1] = encoderList[1].Remove(2, 1).Insert(1, "0");
+            encoderList[0] = encoderList[0].Remove(2, 1).Insert(2, "1");
+            encoderList[1] = encoderList[1].Remove(6, 1).Insert(6, "1");
             foreach (var encoder in encoderList)
                 Console.Write($"{encoder} ");
             Console.WriteLine();
 
             Console.WriteLine(GetStrFromCodeHamming(encoderList));
 
-            var decoderList = DecoderHamming(encoderList);
+            var decoderList = new List<string> (DecoderHamming(encoderList));
             foreach (var decoder in decoderList)
                 Console.Write($"{decoder} ");
             Console.WriteLine();
